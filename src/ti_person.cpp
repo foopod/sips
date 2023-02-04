@@ -11,6 +11,7 @@
 #include "bn_sprite_items_walk4.h"
 #include "bn_sprite_items_walk5.h"
 #include "bn_sprite_items_walk6.h"
+#include "bn_sprite_items_walk7.h"
 #include "bn_sprite_items_walk8.h"
 #include "bn_sprite_items_shadow.h"
 
@@ -31,7 +32,7 @@ namespace
     builder.set_position(position);
     builder.set_z_order(50);
     builder.set_blending_enabled(true);
-    bn::blending::set_transparency_alpha(0.3);
+    bn::blending::set_transparency_alpha(0.5);
     return builder.release_build();
   }
 
@@ -94,6 +95,8 @@ namespace ti
         _sprite_item = bn::sprite_items::walk6;
     } else if(type == TYPE::GIRL1){
         _sprite_item = bn::sprite_items::walk8;
+    } else if(type == TYPE::GIRL2){
+        _sprite_item = bn::sprite_items::walk7;
     }
 
     _sprite = _create_sprite(pos, start == START::LEFT, _sprite_item.value());
@@ -103,7 +106,7 @@ namespace ti
 
   void Person::update()
   {
-    bn::fixed_point counter = bn::fixed_point(-62, 16);
+    bn::fixed_point counter = bn::fixed_point(-86, 14);
     bn::fixed_point door = bn::fixed_point(88,36);
     bn::fixed_point outside = bn::fixed_point(100,60);
     bn::fixed_point left = bn::fixed_point(-140,60);

@@ -31,9 +31,10 @@ namespace ti
         RED_SHIRT = 1,
         BLUE_SHIRT = 2,
         RED_SINGLET = 3,
-        PALE_GREEN_SHIRT = 4,
-        DWIGHT = 5,
-        GIRL1 = 6,
+        DWIGHT = 4,
+        GIRL1 = 5,
+        GIRL2 = 6,
+        PALE_GREEN_SHIRT = 7,
 
     };
 
@@ -57,7 +58,7 @@ namespace ti
             bn::fixed _speed = 0.3;
             bn::random _random = bn::random();
             TYPE _type = TYPE::GREEN_SHIRT;
-            int _wait_max = 260;
+            int _wait_max = 320;
             int _wait_time = 0;
             STATE _state = STATE::WAITING;
             void setStyle(TYPE type, START start, bn::fixed_point pos);
