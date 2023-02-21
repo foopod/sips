@@ -167,10 +167,15 @@ namespace ti
         _sprite.value().set_position(next_step);
         if(DOOR.x() == next_step.x() && DOOR.y() == next_step.y()){
             _state = STATE::WALKING_TO_ORDER;
-            _sprite.value().set_z_order(-100);
             _sprite.value().set_horizontal_flip(true);
         }
     } else if(_state == STATE::WALKING_TO_ORDER){
+        bn::fixed_point next_step = _get_next_step(_sprite.value().position(), QUEUE_START, _speed);
+        _sprite.value().set_position(next_step);
+        if(QUEUE_START.x() == next_step.x() && QUEUE_START.y() == next_step.y()){
+            _state = STATE::JOINING_QUEUE;
+        }
+    } else if(_state == STATE::JOINING_QUEUE){
         bn::fixed_point next_step = _get_next_step(_sprite.value().position(), TILL, _speed);
 
         // check if in queue
@@ -291,10 +296,9 @@ namespace ti
 
         if(LEFT.x() == next_step.x() && LEFT.y() == next_step.y()){
             _state = STATE::WALKING_RIGHT;
-            int next_type = static_cast<int>(_type) + 1;
-            if(next_type > 8){
-                next_type = 0;
-            }
+            int type_index = _random.get_int(types.size());
+            int next_type = types.at(type_index);
+            types.erase(types.begin() + type_index);
             setStyle(static_cast<TYPE>(next_type), START::LEFT, _sprite.value().position());
             _sprite.value().set_horizontal_flip(false);
         }

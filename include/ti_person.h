@@ -27,6 +27,7 @@ namespace ti
         WAITING = 10,
         WALKING_TO_DOOR = 11,
         EXITING = 12,
+        JOINING_QUEUE = 13,
     };
 
     enum class TYPE
@@ -85,6 +86,7 @@ namespace ti
             bn::fixed_point OUTSIDE = bn::fixed_point(100,60);
             bn::fixed_point LEFT = bn::fixed_point(-140,60);
             bn::fixed_point RIGHT = bn::fixed_point(180,60);
+            bn::fixed_point QUEUE_START = bn::fixed_point(0, 24);
 
             bn::vector<bn::fixed_point, 5> LOCATIONS;
             

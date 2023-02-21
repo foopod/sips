@@ -89,7 +89,7 @@ int main()
     bn::vector<bn::sprite_ptr, 4> cash_text_sprites;
     text_generator.set_bg_priority(0);
 
-    int cash = 35;
+    int cash = 535;
     int popularity_level = 1;
     bn::sprite_ptr popularity_bar = bn::sprite_items::popularity_bar.create_sprite(-79, -73, popularity_level);
 
@@ -123,6 +123,7 @@ int main()
     for(bn::sprite_ptr sprite : upgrades){
         sprite.set_visible(false);
     }
+    upgrades.at(8).set_z_order(-40);
 
     bn::music_items::wild_strawberry.play();
     bn::music::set_volume(1);
@@ -137,7 +138,7 @@ int main()
     map2.set_visible(false);
 
     // sprite
-    bn::sprite_ptr title = bn::sprite_items::title.create_sprite(4, -22);
+    bn::sprite_ptr title = bn::sprite_items::title.create_sprite(16, -22);
     bn::sprite_ptr steam = bn::sprite_items::steam.create_sprite(-70, -8);
     steam.set_blending_enabled(true);
     bn::blending::set_transparency_alpha(0.5);
@@ -189,8 +190,8 @@ int main()
     bn::sprite_animate_action<15> reflectAction1 = bn::create_sprite_animate_action_once(
                     reflect1, 4, bn::sprite_items::reflect.tiles_item(), 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14);
 
-    bn::sprite_animate_action<7> twinkle_action = bn::create_sprite_animate_action_once(
-                    twinkle, 4, bn::sprite_items::twinkle.tiles_item(), 0,1,2,3,4,5,6);
+    bn::sprite_animate_action<11> twinkle_action = bn::create_sprite_animate_action_once(
+                    twinkle, 6, bn::sprite_items::twinkle.tiles_item(), 0,1,2,3,4,5,6,7,8,9,10);
 
     // bn::sprite_animate_action<15> reflectAction2 = bn::create_sprite_animate_action_once(
     //                 reflect2, 4, bn::sprite_items::reflect.tiles_item(), 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14);
@@ -253,7 +254,7 @@ int main()
                     twinkle.set_visible(true);
                     bn::sound_items::sparkle.play(0.8);
                     twinkle_action = bn::create_sprite_animate_action_once(
-                        twinkle, 4, bn::sprite_items::twinkle.tiles_item(), 0,1,2,3,4,5,6);
+                        twinkle, 6, bn::sprite_items::twinkle.tiles_item(), 0,1,2,3,4,5,6,7,8,9,10);
                 }
             }
         } else {
