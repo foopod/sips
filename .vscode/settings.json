@@ -2,6 +2,26 @@
     "files.associations": {
         "optional": "cpp",
         "__node_handle": "cpp",
-        "system_error": "cpp"
+        "system_error": "cpp",
+        "ios": "cpp",
+        "vector": "cpp",
+        "iosfwd": "cpp",
+        "deque": "cpp",
+        "array": "cpp",
+        "bitset": "cpp",
+        "string_view": "cpp",
+        "initializer_list": "cpp",
+        "valarray": "cpp",
+        "__hash_table": "cpp",
+        "__split_buffer": "cpp",
+        "__tree": "cpp",
+        "list": "cpp",
+        "map": "cpp",
+        "queue": "cpp",
+        "set": "cpp",
+        "string": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp",
+        "*.tcc": "cpp"
     }
 }
