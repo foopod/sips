@@ -1,3 +1,5 @@
+# Sips
+
 A chill idele game for GBA WinterJam23
 
 ![image](https://github.com/foopod/sips/assets/3768616/04360866-c41f-438f-ad49-8c5f8ac124ec)
